@@ -1,24 +1,15 @@
 /* Requires the Docker Pipeline plugin */
-// pipeline {
-//     agent { docker { image 'python:3.12.5-alpine3.20' } }
-//     stages {
-//         stage('build') {
-//             steps {
-//                 sh 'sudo usermod -aG docker jenkins'
-                
-//                 sh 'python --version'
-//                 // echo "hello"
-//             }
-//         }
-//     }
-// }
 pipeline {
-    agent any
+    agent { docker { image 'python:3.12.5-alpine3.20' } }
     stages {
-        stage('Test Docker Access') {
+        stage('build') {
             steps {
-                sh 'docker info'
+                // sh 'sudo usermod -aG docker jenkins'
+                
+                sh 'python --version'
+                // echo "hello"
             }
         }
     }
 }
+
