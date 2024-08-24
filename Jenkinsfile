@@ -1,15 +1,10 @@
-/* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'python:3.12.5-alpine3.20' } }
+    agent any
     stages {
-        stage('build') {
+        stage('Submit Stack') {
             steps {
-                // sh 'sudo usermod -aG docker jenkins'
-                
-                sh 'python --version'
-                // echo "hello"
+            sh "aws cloudformation create-stack --stack-name s3Stack --template-body file://cft-s3.yaml --region 'us-west-2'"
+              }
+             }
             }
-        }
-    }
-}
-
+            }
