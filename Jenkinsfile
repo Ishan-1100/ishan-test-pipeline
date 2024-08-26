@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        AWS_ACCESS_KEY_ID = 'AKIAST6S7E24WDHFTQGH'
-        AWS_SECRET_ACCESS_KEY = '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'
-    }
+    //     AWS_ACCESS_KEY_ID = 
+    //     AWS_SECRET_ACCESS_KEY = 
+    // }
     stages {
         stage('Submit Stack') {
             steps {
